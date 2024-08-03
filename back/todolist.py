@@ -24,3 +24,7 @@ class TodoList:
         
         self.todo[posicao] = tarefa
         return self.todo
+    
+    def removeAll(self):
+        self.todo.clear()
+        return self.todo
