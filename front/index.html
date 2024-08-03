@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <style>
+        .todo-item {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .checked {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <div>
+        <div class="todo-item">
+            <input type="checkbox" id="subscribedNews1" name="subscribe" onclick="toggleCheck(this)" />
+            <label for="subscribedNews1">Subscribe to news</label>
+        </div>
+        <div class="todo-item">
+            <input type="checkbox" id="subscribedNews2" name="subscribe" onclick="toggleCheck(this)" />
+            <label for="subscribedNews2">Teste</label>
+        </div>
+    </div>
+
+    <script>
+        function toggleCheck(checkbox) {
+            const label = checkbox.nextElementSibling;
+            if (checkbox.checked) {
+                label.classList.add('checked');
+            } else {
+                label.classList.remove('checked');
+            }
+        }
+    </script>
+</body>
+</html>
