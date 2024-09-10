@@ -1,7 +1,7 @@
 function removeAllItems() {
     // Chamar a API para remover todos os itens
     fetch('http://127.0.0.1:8000/removeAll', {
-        method: 'POST',  // Alterado para POST
+        method: 'DELETE',  // Alterado para POST
         headers: {
             'Content-Type': 'application/json'  // Adicionando cabeçalho apropriado
         },
