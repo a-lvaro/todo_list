@@ -20,10 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-#  poetry run uvicorn main:app --reload
-
 todo_list = TodoList()
-
 
 class Tarefa:
     tarefa :str
