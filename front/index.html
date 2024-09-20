@@ -1,63 +1,138 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Todo List</title>
     <style>
-        .todo-item {
-            display: block;
-            margin-bottom: 10px;
+        /* Definindo o estilo para o corpo com fundo azul claro */
+        body {
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
+
+        /* Estilizando a caixa branca centralizada */
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        /* Centralizando o conteúdo da lista */
+        #todo-list {
+            margin-bottom: 20px;
+        }
+
+        /* Estilizando os itens da lista */
+        .todo-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            justify-content: flex-start; /* Alinha itens ao início */
+            text-align: left; /* Alinha o texto à esquerda */
+        }
+
+        /* Aplicando estilo ao texto riscado */
         .checked {
             text-decoration: line-through;
             color: gray;
         }
+
+        /* Estilo para o input de novo item e os botões */
+        input[type="text"], button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            width: 100%;
+        }
+
+        /* Estilizando botão de edição */
+        button.edit-button {
+            background-color: #b3e5fc; /* Azul muito claro */
+            border: none;
+            color: #0288d1; /* Azul claro */
+            padding: 4px 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            font-size: 14px;
+            text-align: center;
+            width: 28px; /* Largura menor */
+            height: 28px; /* Altura ajustada para ser igual à largura */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Alterando cor do botão de edição ao passar o mouse */
+        button.edit-button:hover {
+            background-color: #81d4fa; /* Azul claro */
+            color: white;
+        }
+
+        /* Estilizando checkbox */
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 12px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        /* Estilizando o texto do item */
+        label {
+            margin-top: 8px;
+            margin-left: 5px;
+        }
+
+        /* Alterando cor dos botões ao passar o mouse */
+        button:hover {
+            background-color: #29b6f6;
+            color: white;
+            cursor: pointer;
+        }
     </style>
-    
 </head>
 <body>
-    <h1>Todo List</h1>
-    <div id="todo-list">
-        <div class="todo-item">
+    <div class="container">
+        <h1>Todo List</h1>
+        <div id="todo-list">
+            <div class="todo-item">
+                <!-- Itens da lista -->
+            </div>
+        </div>
 
+        <!-- Input e botão para adicionar item -->
+        <div>
+            <input type="text" id="new-item-text" placeholder="New item" />
+            <button onclick="addItem()">Add Item</button>
+            <!-- <script src="./addiItens.js"></script> -->
+        </div>
+
+        <!-- Botão para apagar itens selecionados -->
+        <div>
+            <button onclick="removeSelectedItems()">Apagar itens selecionados</button>
+            <!-- <script src="./apagarItemSelecionado.js"></script> -->
+        </div>
+
+        <!-- Botão para apagar todos os itens -->
+        <div>
+            <button onclick="removeAllItems()">Apagar a lista</button>
+            <!-- <script src="./apagarTodosItens.js"></script> -->
         </div>
     </div>
-    <div>
-        <input type="text" id="new-item-text" placeholder="New item" />
-        <button onclick="addItem()">Add Item</button>
-        <script src="./addiItens.js"></script>
-    </div>
-    <div>
-        <button onclick="removeAllItems()">Apagar a lista</button>
-        <script src="./apagarItens.js"></script>
-    </div>
-
     
+    <script src="./script.js"></script>
 
-    <!-- <script>
-        function toggleCheck(checkbox) {
-            const label = checkbox.nextElementSibling;
-            if (checkbox.checked) {
-                label.classList.add('checked');
-            } else {
-                label.classList.remove('checked');
-            }
-        }
-
-        function refreshPage() {
-            fetch(`http://127.0.0.1:8000/lista`, {
-                method: 'GET',
-                mode: 'cors'
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Success:', data);
-            })
-        }
-    </script> -->
 </body>
 </html>

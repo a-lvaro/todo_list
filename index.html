@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <style>
+        .todo-item {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .checked {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Todo List</h1>
+    <div id="todo-list">
+        <div class="todo-item">
+
+        </div>
+    </div>
+    <div>
+        <input type="text" id="new-item-text" placeholder="New item" />
+        <button onclick="addItem()">Add Item</button>
+        <script src="./addiItens.js"></script>
+    </div>
+    <div>
+        <button onclick="removeAllItems()">Apagar a lista</button>
+        <script src="./apagarTodosItens.js"></script>
+    </div>
+
+    
+
+    <!-- <script>
+        function toggleCheck(checkbox) {
+            const label = checkbox.nextElementSibling;
+            if (checkbox.checked) {
+                label.classList.add('checked');
+            } else {
+                label.classList.remove('checked');
+            }
+        }
+
+        function refreshPage() {
+            fetch(`http://127.0.0.1:8000/lista`, {
+                method: 'GET',
+                mode: 'cors'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Success:', data);
+            })
+        }
+    </script> -->
+</body>
+</html>
